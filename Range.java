@@ -19,6 +19,9 @@ class Range {
 		
 		Integer minRange = this.startRange;
 		Integer maxRange = list2.endRange;
+		if(!doesRangeOverLap(list2)){
+			return null;
+		}
 		if (this.startRange > list2.startRange){
 			minRange = list2.startRange;
 		}
@@ -33,7 +36,9 @@ class Range {
 	public ArrayList<Range> splitRange(Range list){
 		
 		ArrayList<Range> splitList = new ArrayList();
-		
+		if (!doesRangeOverLap(list)){
+			return null;
+		}
 		if (this.startRange < list.startRange && this.endRange > list.endRange){
 			splitList.add(new Range(this.startRange , list.startRange -1));
 			splitList.add(new Range(list.endRange + 1 , this.endRange));
