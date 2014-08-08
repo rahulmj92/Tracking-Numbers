@@ -1,7 +1,7 @@
 Tracking-Numbers
 ================
 
-TrackingNumberRange Class :
+Range Class :
 
   Data Members:
   ->int startRange
@@ -12,6 +12,20 @@ TrackingNumberRange Class :
   -> ArrayList<TrackingNumberRange> SplitRanges(TrackingNumberRange range)
   -> TrackingNumberRange MergeRanges(TrackingNumberRange range)
   -> TrackingNumberRange FindNextRange(TrackingNumberRange range)
+  
+  
+TrackingNumber Class :
+
+  Data Members :
+  -> Range range
+  -> char statusCode
+  -> int transferCode
+  
+  Functionalities :
+  -> compareRanges(TrackingNumber, TrackingNumber)
+  -> finalizeRange(TrackingNumber)
+  
+  
   
 
   
