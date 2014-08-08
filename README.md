@@ -9,9 +9,9 @@ Range Class :
 
   Functionalities to be implemented are:
   -> boolean DoesRangeOverLap(TrackingNumberRange range)
+  -> boolean doesRangeLieInsideAnother(Range list)
   -> ArrayList<TrackingNumberRange> SplitRanges(TrackingNumberRange range)
   -> TrackingNumberRange MergeRanges(TrackingNumberRange range)
-  -> TrackingNumberRange FindNextRange(TrackingNumberRange range)
   
   
 TrackingNumber Class :
