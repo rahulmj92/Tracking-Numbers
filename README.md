@@ -23,7 +23,10 @@ TrackingNumber Class :
   
   Functionalities :
   -> compareRanges(TrackingNumber, TrackingNumber)
+  
   -> finalizeRange(TrackingNumber)
+  
+  -> updateRange(TrackingNumber[])
   
   
   
