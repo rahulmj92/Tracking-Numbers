@@ -25,8 +25,8 @@ class Range {
 		if (this.startRange > list2.startRange){
 			minRange = list2.startRange;
 		}
-		if (list2.endRange > this.endRange){
-			maxRange = list2.endRange;
+		if (list2.endRange < this.endRange){
+			maxRange = this.endRange;
 		}
 		
 		
