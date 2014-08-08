@@ -1,3 +1,5 @@
+import static org.junit.Assert.*;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -14,7 +16,7 @@ public class RangeTest {
 		
 		ArrayList <String> Input = new ArrayList<String>();
 		ArrayList <String> ExpectedOutput = new ArrayList<String>();
-		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\rmaji\\workspace\\Tracking Number\\src\\mergeTestCases.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("mergeTestCases"));
 		String line;
     	while((line = br.readLine()) != null)
     	{
@@ -32,7 +34,7 @@ public class RangeTest {
     		Range testRange2 = new Range(Integer.parseInt(startEndPairsInput[2]) , Integer.parseInt(startEndPairsInput[3]));
     		
     		if(startEndPairsOutput.length == 2)
-    			assertEquals("[" + startEndPairsOutput[0] + "," + startEndPairsOutput[1] + "]", testRange1.mergeRange(testRange2).toString());
+    			assertEquals( startEndPairsOutput[0] + "," + startEndPairsOutput[1] , testRange1.mergeRange(testRange2).toString());
     		else
     			assertEquals("null", testRange1.mergeRange(testRange2));
 		}
@@ -44,7 +46,7 @@ public class RangeTest {
 		
 		ArrayList <String> Input = new ArrayList<String>();
 		ArrayList <String> ExpectedOutput = new ArrayList<String>();
-		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\rmaji\\workspace\\Tracking Number\\src\\splitTestCases.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("splitTestCases"));
 		String line;
     	while((line = br.readLine()) != null)
     	{
@@ -62,9 +64,9 @@ public class RangeTest {
     		Range testRange2 = new Range(Integer.parseInt(startEndPairsInput[2]) , Integer.parseInt(startEndPairsInput[3]));
     	
     		if(startEndPairsOutput.length == 2)
-    			assertEquals("[" + startEndPairsOutput[0] + "," + startEndPairsOutput[1] + "]", testRange1.splitRange(testRange2).toString());
-    		else
-    			assertEquals("null", testRange1.splitRange(testRange2));
+    			assertEquals("[" + ExpectedOutput.get(i)+"]" , testRange1.splitRange(testRange2).toString());
+//    		else
+//    			assertEquals("null", testRange1.splitRange(testRange2));
 		}
 		
 	}
@@ -74,7 +76,7 @@ public class RangeTest {
 		
 		ArrayList <String> Input = new ArrayList<String>();
 		ArrayList <String> ExpectedOutput = new ArrayList<String>();
-		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\rmaji\\workspace\\Tracking Number\\src\\RangeOverlap_TestCases.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("RangeOverlap_TestCases"));
 		String line;
     	while((line = br.readLine()) != null)
     	{
@@ -91,10 +93,9 @@ public class RangeTest {
     		Range testRange1 = new Range(Integer.parseInt(startEndPairsInput[0]) , Integer.parseInt(startEndPairsInput[1]));
     		Range testRange2 = new Range(Integer.parseInt(startEndPairsInput[2]) , Integer.parseInt(startEndPairsInput[3]));
     		
-    		if(startEndPairsOutput.length == 2)
-    			assertEquals("[" + startEndPairsOutput[0] + "," + startEndPairsOutput[1] + "]", testRange1.doesRangeOverLap(testRange2).toString());
-    		else
-    			assertEquals("null", testRange1.doesRangeOverLap(testRange2));
+    		
+    			assertEquals(ExpectedOutput.get(i), Boolean.toString(testRange1.doesRangeOverLap(testRange2)));
+    		
 		}
 		
 	}
@@ -104,7 +105,7 @@ public class RangeTest {
 		
 		ArrayList <String> Input = new ArrayList<String>();
 		ArrayList <String> ExpectedOutput = new ArrayList<String>();
-		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\rmaji\\workspace\\Tracking Number\\src\\RangeLieInsideTestCases.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("RangeLieInside_TestCases"));
 		String line;
     	while((line = br.readLine()) != null)
     	{
@@ -122,10 +123,11 @@ public class RangeTest {
     		Range testRange2 = new Range(Integer.parseInt(startEndPairsInput[2]) , Integer.parseInt(startEndPairsInput[3]));
     		
     		if(startEndPairsOutput.length == 2)
-    			assertEquals("[" + startEndPairsOutput[0] + "," + startEndPairsOutput[1] + "]", testRange1.doesRangeLieInsideAnother(testRange2).toString());
-    		else
-    			assertEquals("null", testRange1.doesRangeLieInsideAnother(testRange2));
+    			assertEquals("[" + startEndPairsOutput[0] + "," + startEndPairsOutput[1] + "]", Boolean.toString(testRange1.doesRangeLieInsideAnother(testRange2)));
+//    		else
+//    			assertEquals("null", testRange1.doesRangeLieInsideAnother(testRange2));
 		}
 		
 	}
 }
+
