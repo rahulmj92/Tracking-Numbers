@@ -15,3 +15,4 @@ public class TrackingTable extends Range{
 		this.statusCode = statusCode;
 		this.transferCode = transferCode;
 	}
+}
